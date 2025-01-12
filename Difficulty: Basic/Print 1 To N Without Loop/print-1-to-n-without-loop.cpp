@@ -4,16 +4,25 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
     // Complete this function
     void printNos(int n) {
         // Your code here
-        for(int i=1; i<= n ;i++){
-            cout<< i << " ";
+        // if(n>1){
+        //     printNos(n-1);
+        // }
+        // cout<< n <<" ";
+        
+        if(n == 0){
+            return;
         }
+        printNos(n-1);
+        cout<< n <<" ";
     }
 };
+
 
 //{ Driver Code Starts.
 /* Driver program to test printNos */
