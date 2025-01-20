@@ -39,28 +39,20 @@ struct Node
 
 class Solution {
   public:
-  
-    void reverseit(Node* &head,Node* curr,Node* prev)
-    {
-      if(curr==NULL)
-      {
-          head=prev;
-          return ;
-      }
-    
-      Node* temp=curr->next;
-      reverseit(head,temp,curr);
-      curr->next=prev;
-    }
-  
     Node* reverseList(struct Node* head) {
         // code here
-        Node* curr = head;
+        // iterative approach
+        
         Node* prev = NULL;
+        Node* curr = head;
         
-        reverseit(head,curr,prev);
-        return head;
-        
+        while (curr != NULL){
+            Node* nextNode = curr -> next;
+            curr -> next = prev;
+            prev = curr ;
+            curr = nextNode ;
+        }
+        return prev;
     }
 };
 
